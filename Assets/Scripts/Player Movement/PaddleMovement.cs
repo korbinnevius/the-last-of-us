@@ -7,8 +7,12 @@ public class PaddleMovement : MonoBehaviour
     /// <summary>
     /// Takes input from Player input to control the position of the paddle.
     /// </summary>
-    // Start is called before the first frame update
     
+    
+    //rotate towards
+    //rotate around an axis... which as a simple solution could be making a pivot point at the
+    // center of the world or center of the parented object and have the paddle rotate around
+    //itself.
     void Start()
     {
         

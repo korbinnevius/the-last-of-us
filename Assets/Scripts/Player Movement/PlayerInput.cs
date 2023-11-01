@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Input = TiltFive.Input;
 
 public class PlayerInput : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PlayerInput : MonoBehaviour
     /// Using the rotation of the joystick as a basline control for the positon
     /// of the paddle.
     /// </summary>
+    
     
     void Start()
     {
@@ -22,5 +24,8 @@ public class PlayerInput : MonoBehaviour
         
     }
 
-    
+    public void JoystickInput()
+    {
+        
+    }
 }
