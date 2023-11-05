@@ -12,7 +12,7 @@ public class BrickSpawner : MonoBehaviour
     
     void Start()
     {
-        //SurrounderParentTransform = new GameObject(gameObject.name + " Surround Parent").transform;
+        SurrounderParentTransform = new GameObject(gameObject.name + " Surround Parent").transform;
         StartCoroutine(SurroundStepAnimated());
         
     }
@@ -21,7 +21,7 @@ public class BrickSpawner : MonoBehaviour
     {
         yield return new WaitForSeconds(appearWaitDuration);
         
-        float angleStep = 360.0f;
+        float angleStep = 360.0f / brickSpawnCount;
         brick.transform.SetParent(SurrounderParentTransform);
 
         for (int i = 1; i < brickSpawnCount; i++)
