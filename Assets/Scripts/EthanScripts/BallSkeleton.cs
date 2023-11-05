@@ -1,48 +1,54 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
 public class BallSkeleton : MonoBehaviour
 {
     private Rigidbody _rigidbody;
-    //target can be an empty for the object, this script is attached to, to rotate around
-    public Transform center;
+    [Tooltip("target can be an empty for the object, this script is attached to, to rotate around. Can be empty.")]
+    [SerializeField] private Transform center;
 
-    private float radius = 5;
+    private float radius;
     // Start is called before the first frame update
     private void Awake()
     {
-        radius = Vector3.Distance(transform.position, center.position);
+        
         _rigidbody = GetComponent<Rigidbody>();
+        SetRadiusToCurrent();
+        
+        //make the center property not required, just use world center if it's not set.
+        //Create center object if it doesnt exist.
+        if (center == null)
+        {
+            center = new GameObject().transform;
+            center.gameObject.name = "Center";
+            center.transform.position = Vector3.zero;
+        }
     }
 
-    void Start()
+    private void SetRadiusToCurrent()
     {
-        
+        radius = Vector3.Distance(new Vector3(center.position.x,transform.position.y,center.position.z), transform.position);
     }
 
     private void FixedUpdate()
     {
-        Vector3 vel = _rigidbody.velocity;
-        Vector3 dirToCenter = new Vector3(center.position.x,transform.position.y,center.position.z) - transform.position;//center - position
-        dirToCenter.Normalize();//magnitude of 1
-        Vector3 desired = Vector3.ProjectOnPlane(vel, dirToCenter);
-        _rigidbody.velocity = desired.normalized * vel.magnitude;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
+        //the center, but at our y position.
+        Vector3 centerAtY = new Vector3(center.position.x, _rigidbody.position.y, center.position.z);
         
-        //Bounce off and Destroy Bricks
-        // if (collision.gameObject.CompareTag("Brick"))
-        // {
-        //     //Brick();
-        // }
+        //A vector that is like the hand of a clock. uh, except arrow pointing inwards.
+        Vector3 dirToCenter =  (centerAtY - _rigidbody.position).normalized;//center - position
         
-        //Ball Kill Zone or Game Over
-        //KillZone
+        //lock velocity to plane
+        Vector3 desired = Vector3.ProjectOnPlane(_rigidbody.velocity, dirToCenter);
+        _rigidbody.velocity = desired.normalized * _rigidbody.velocity.magnitude;
+        
+        //snap radius so it doesn't drift in or out.
+        //normalize * radius means we are exactly radius away from centerAtY.
+        _rigidbody.position = centerAtY - (dirToCenter*radius);
     }
 
     //Bounce off Player Paddle
