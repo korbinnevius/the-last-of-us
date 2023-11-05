@@ -24,7 +24,7 @@ public class BallSkeleton : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         SetRadiusToCurrent();
         
-        //Launch();
+        Launch();
         
         //make the center property not required, just use world center if it's not set.
         //Create center object if it doesnt exist.
@@ -58,12 +58,12 @@ public class BallSkeleton : MonoBehaviour
         _rigidbody.position = centerAtY - (dirToCenter*radius);
     }
 
-    // public void Launch()
-    // {
-    //     
-    //     _rigidbody.AddForce(XAxisForce, YAxisForce, ZAxisForce);
-    //
-    // }
+    public void Launch()
+    {
+        
+        _rigidbody.AddForce(XAxisForce, YAxisForce, ZAxisForce, ForceMode.Impulse);
+    
+    }
 
     //Bounce off Player Paddle
     
