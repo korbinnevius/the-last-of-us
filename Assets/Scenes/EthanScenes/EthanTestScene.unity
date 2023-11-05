@@ -1412,7 +1412,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587070349}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1501,8 +1501,8 @@ GameObject:
   - component: {fileID: 1728180340}
   - component: {fileID: 1728180345}
   m_Layer: 0
-  m_Name: Sphere
-  m_TagString: Untagged
+  m_Name: Ball
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1629,10 +1629,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1728180339}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b17e168a63c1954797c13870716e757, type: 3}
+  m_Script: {fileID: 11500000, guid: 00b986954a321c2448c53f803afc3eff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   center: {fileID: 1719368031}
+  XAxisForce: 0
+  YAxisForce: -400
+  ZAxisForce: 400
 --- !u!1 &1819287413
 GameObject:
   m_ObjectHideFlags: 0
