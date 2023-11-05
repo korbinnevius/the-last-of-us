@@ -11,6 +11,11 @@ public class BallSkeleton : MonoBehaviour
     [Tooltip("target can be an empty for the object, this script is attached to, to rotate around. Can be empty.")]
     [SerializeField] private Transform center;
 
+    //For testing and can be accessed by other scripts for gameplay
+    public float XAxisForce = 0f;
+    public float YAxisForce = 0f;
+    public float ZAxisForce = 0f;
+    
     private float radius;
     // Start is called before the first frame update
     private void Awake()
@@ -18,6 +23,8 @@ public class BallSkeleton : MonoBehaviour
         
         _rigidbody = GetComponent<Rigidbody>();
         SetRadiusToCurrent();
+        
+        Launch();
         
         //make the center property not required, just use world center if it's not set.
         //Create center object if it doesnt exist.
@@ -51,11 +58,16 @@ public class BallSkeleton : MonoBehaviour
         _rigidbody.position = centerAtY - (dirToCenter*radius);
     }
 
+    public void Launch()
+    {
+        
+        _rigidbody.AddForce(XAxisForce, YAxisForce, ZAxisForce, ForceMode.Impulse);
+    
+    }
+
     //Bounce off Player Paddle
     
-    //Bounce of Environment
+    //Bounce off Environment
     
     
-    
-    //The Plain the Ball is Mapped To
 }
