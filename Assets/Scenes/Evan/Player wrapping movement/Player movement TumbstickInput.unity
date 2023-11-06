@@ -692,7 +692,7 @@ MonoBehaviour:
   parentRotationalObject: {fileID: 1477639422}
   _movementQuaternion: {x: 0, y: 0, z: 0, w: 0}
   rotationDegree: 0
-  rotationalSpeed: 1
+  rotationalSpeed: 2
 --- !u!114 &8720777166841037902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -705,7 +705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ec0b8428ebedb04f9fa9e668e0a5597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftOrRightFloat: 0
+  StickAxisValueFloat: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
