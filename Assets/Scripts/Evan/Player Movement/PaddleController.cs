@@ -36,13 +36,13 @@ public class PaddleController : MonoBehaviour
 
     public void RotateLeft()
     {
-        rotationDegree = rotationalSpeed;
+        rotationDegree = rotationalSpeed * Time.deltaTime;
         //Debug.Log("called left");
     }
 
     public void RotateRight()
     {
-        rotationDegree = -rotationalSpeed;
+        rotationDegree = -rotationalSpeed * Time.deltaTime;
         //Debug.Log("Called right");
     }
 

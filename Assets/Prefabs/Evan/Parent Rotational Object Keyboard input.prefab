@@ -168,4 +168,4 @@ MonoBehaviour:
   parentRotationalObject: {fileID: 4474821631698186650}
   _movementQuaternion: {x: 0, y: 0, z: 0, w: 0}
   rotationDegree: 0
-  rotationalSpeed: 1
+  rotationalSpeed: 100
