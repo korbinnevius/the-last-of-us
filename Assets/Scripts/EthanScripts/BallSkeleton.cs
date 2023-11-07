@@ -8,6 +8,7 @@ using UnityEngine.Rendering.Universal;
 public class BallSkeleton : MonoBehaviour
 {
     private Rigidbody _rigidbody;
+    
     [Tooltip("target can be an empty for the object, this script is attached to, to rotate around. Can be empty.")]
     [SerializeField] private Transform center;
 
@@ -16,6 +17,9 @@ public class BallSkeleton : MonoBehaviour
     public float YAxisForce = 0f;
     public float ZAxisForce = 0f;
     
+    public float MaxSpeed = 50f;
+    public float MaxSpeedRateOT = 0f;
+    
     private float radius;
     // Start is called before the first frame update
     private void Awake()
@@ -23,8 +27,9 @@ public class BallSkeleton : MonoBehaviour
         
         _rigidbody = GetComponent<Rigidbody>();
         SetRadiusToCurrent();
-        
-        //BallLaunch();
+        SetMaxVelocity();
+
+        BallLaunch();
         
         //make the center property not required, just use world center if it's not set.
         //Create center object if it doesnt exist.
@@ -35,10 +40,17 @@ public class BallSkeleton : MonoBehaviour
             center.transform.position = Vector3.zero;
         }
     }
-
+    
+    //Setting the radius of the object from the "center" based on where the object is in world space
     private void SetRadiusToCurrent()
     {
         radius = Vector3.Distance(new Vector3(center.position.x,transform.position.y,center.position.z), transform.position);
+    }
+
+    //Setting the max speed for the "ball" that can be increased later
+    private void SetMaxVelocity()
+    {
+        _rigidbody.maxLinearVelocity = MaxSpeed;
     }
 
     private void FixedUpdate()
@@ -56,6 +68,13 @@ public class BallSkeleton : MonoBehaviour
         //snap radius so it doesn't drift in or out.
         //normalize * radius means we are exactly radius away from centerAtY.
         _rigidbody.position = centerAtY - (dirToCenter*radius);
+        
+    }
+
+    private void Update()
+    {
+        
+        MaxSpeed = MaxSpeed + MaxSpeedRateOT * Time.deltaTime ;
         
     }
 
