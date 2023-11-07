@@ -19,7 +19,9 @@ public class BallSkeleton : MonoBehaviour
     
     public float MaxSpeed = 50f;
     public float MaxSpeedRateOT = 0f;
-    
+
+    private bool BallIsLaunched = false;
+
     private float radius;
     // Start is called before the first frame update
     private void Awake()
@@ -75,19 +77,17 @@ public class BallSkeleton : MonoBehaviour
     {
         
         MaxSpeed = MaxSpeed + MaxSpeedRateOT * Time.deltaTime ;
-        
+        if (BallIsLaunched = true)
+        {
+            _rigidbody.AddForce(100f, 100f, 100f, ForceMode.Impulse);
+        }
     }
 
     public void BallLaunch()
     {
         
         _rigidbody.AddForce(XAxisForce, YAxisForce, ZAxisForce, ForceMode.Impulse);
-    
+        BallIsLaunched = true;
     }
-
-    //Bounce off Player Paddle
-    
-    //Bounce off Environment
-    
-    
+  
 }
