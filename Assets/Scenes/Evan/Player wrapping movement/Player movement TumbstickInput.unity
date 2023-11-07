@@ -299,6 +299,7 @@ GameObject:
   - component: {fileID: 1494248578}
   - component: {fileID: 1494248577}
   - component: {fileID: 1494248576}
+  - component: {fileID: 1494248581}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -419,6 +420,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1494248581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494248575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bdaf3583956ef4429d20f1a529a9f81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  testGmScriptableObject: {fileID: 11400000, guid: e24c21850069325409106f1dc230115d,
+    type: 2}
 --- !u!1 &1888582985
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,6 +614,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8202151494448589175, guid: e036e1328fdf309498938558e840b837,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8202151494448589175, guid: e036e1328fdf309498938558e840b837,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8202151494448589175, guid: e036e1328fdf309498938558e840b837,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8202151494448589175, guid: e036e1328fdf309498938558e840b837,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8202151494448589175, guid: e036e1328fdf309498938558e840b837,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -270
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
