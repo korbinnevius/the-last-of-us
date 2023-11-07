@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+//lives; if ball goes past player lose a life
 public class GameManager : MonoBehaviour
 {
+    //Scriptable Object
     public int totalLives;
     public int bricksDestroyed = 0;
     public int AmntBricksDestroy=32;
