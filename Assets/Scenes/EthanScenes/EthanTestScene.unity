@@ -1715,6 +1715,8 @@ MonoBehaviour:
   XAxisForce: 0
   YAxisForce: -50
   ZAxisForce: 50
+  MaxSpeed: 50
+  MaxSpeedRateOT: 0.1
 --- !u!1 &1819287413
 GameObject:
   m_ObjectHideFlags: 0
