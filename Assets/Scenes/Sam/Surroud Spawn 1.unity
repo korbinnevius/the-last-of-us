@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 185368845}
   - component: {fileID: 185368844}
   - component: {fileID: 185368843}
+  - component: {fileID: 185368842}
   - component: {fileID: 185368841}
   - component: {fileID: 185368840}
   m_Layer: 0
@@ -172,7 +173,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OriginalSurrounderObject: {fileID: 344420553}
   SurrounderObjectCount: 23
-  angleStep: 360
+  _brickMove: {fileID: 185368840}
+  target: {fileID: 2120009569}
+  speed: 3
+--- !u!114 &185368842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185368839}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f20eba778e124e8438c91f730a6de284, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brick: {fileID: 4711865895970089957, guid: 9b1aed7ab0d11fb40814e8b606cfb6c1, type: 3}
+  brickSpawnCount: 9
+  SurrounderParentTransform: {fileID: 185368846}
 --- !u!136 &185368843
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -254,13 +272,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 185368839}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0013946391, y: -0.0011008551, z: -0.00024860562, w: 0.9999984}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.54, y: 6.37, z: -1.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -0.16, y: -0.126, z: -0.028}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &300264891
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -453,7 +471,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OriginalSurrounderObject: {fileID: 1823372289}
   SurrounderObjectCount: 6
-  angleStep: 360
+  _brickMove: {fileID: 667359732}
+  target: {fileID: 2120009569}
+  speed: 3
 --- !u!114 &667359734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -696,7 +716,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OriginalSurrounderObject: {fileID: 6646175955688418291}
   SurrounderObjectCount: 11
-  angleStep: 360
+  _brickMove: {fileID: 1323291967}
+  target: {fileID: 2120009569}
+  speed: 3
 --- !u!114 &1323291967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1287,37 +1309,37 @@ PrefabInstance:
     - target: {fileID: 5052459385223611184, guid: 9b1aed7ab0d11fb40814e8b606cfb6c1,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99996084
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5052459385223611184, guid: 9b1aed7ab0d11fb40814e8b606cfb6c1,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0062514236
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5052459385223611184, guid: 9b1aed7ab0d11fb40814e8b606cfb6c1,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0060818684
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5052459385223611184, guid: 9b1aed7ab0d11fb40814e8b606cfb6c1,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0014844184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5052459385223611184, guid: 9b1aed7ab0d11fb40814e8b606cfb6c1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -0.715
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5052459385223611184, guid: 9b1aed7ab0d11fb40814e8b606cfb6c1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0.698
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5052459385223611184, guid: 9b1aed7ab0d11fb40814e8b606cfb6c1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -0.174
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
