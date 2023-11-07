@@ -56,6 +56,7 @@ public class BallSkeleton : MonoBehaviour
         //snap radius so it doesn't drift in or out.
         //normalize * radius means we are exactly radius away from centerAtY.
         _rigidbody.position = centerAtY - (dirToCenter*radius);
+        
     }
 
     public void BallLaunch()
