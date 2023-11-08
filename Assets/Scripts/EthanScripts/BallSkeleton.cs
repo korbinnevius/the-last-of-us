@@ -13,14 +13,14 @@ public class BallSkeleton : MonoBehaviour
     [SerializeField] private Transform center;
 
     //For testing and can be accessed by other scripts for gameplay
-    public float XAxisForce = 0f;
-    public float YAxisForce = 0f;
-    public float ZAxisForce = 0f;
+    public float XAxisForce;
+    public float YAxisForce;
+    public float ZAxisForce;
     
     public float MaxSpeed = 50f;
-    public float MaxSpeedRateOT = 0f;
+    public float MaxSpeedRateOT;
 
-    private bool BallIsLaunched = false;
+    private bool BallIsLaunched;
 
     private float radius;
     // Start is called before the first frame update
@@ -30,7 +30,7 @@ public class BallSkeleton : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         SetRadiusToCurrent();
         SetMaxVelocity();
-
+        
         BallLaunch();
         
         //make the center property not required, just use world center if it's not set.
@@ -77,9 +77,14 @@ public class BallSkeleton : MonoBehaviour
     {
         
         MaxSpeed = MaxSpeed + MaxSpeedRateOT * Time.deltaTime ;
-        if (BallIsLaunched = true)
+        
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.other.gameObject.CompareTag("Brick"))
         {
-            _rigidbody.AddForce(100f, 100f, 100f, ForceMode.Impulse);
+            _rigidbody.AddForce(_rigidbody.velocity.normalized * 0.01f,ForceMode.Force);
         }
     }
 
