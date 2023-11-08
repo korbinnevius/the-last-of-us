@@ -6,9 +6,11 @@ public class GameMGRScriptableObject : ScriptableObject
 {
     public int totalLives;
     public int bricksDestroyed;
-    public int bricksInScene;
+    public int startBricksInScene;
     public int totalBounces;
     public int totalScore;
     public int roundScore;
     public GameState gameState;
+
+    
 }
