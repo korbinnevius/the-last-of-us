@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: GameMGRScriptableObject
   m_EditorClassIdentifier: 
   totalLives: 0
-  bricksDestroyed: 0
-  bricksInScene: 0
+  bricksDestroyed: 19
+  startBricksInScene: 5
   totalBounces: 0
   totalScore: 0
   roundScore: 0

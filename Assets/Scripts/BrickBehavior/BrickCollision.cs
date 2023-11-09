@@ -23,8 +23,14 @@ public class BrickCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        Instantiate(vfxEmpty);
-        GameMgrScriptableObject.roundScore += 5;
-        Destroy(gameObject);
+        if(other.gameObject.CompareTag("Ball"))
+        {
+            //Add one to brickLess SO
+            GameMgrScriptableObject.bricksDestroyed += 1;
+            Instantiate(vfxEmpty);
+            GameMgrScriptableObject.roundScore += 5;
+            Destroy(gameObject); 
+        }
+        
     }
 }
