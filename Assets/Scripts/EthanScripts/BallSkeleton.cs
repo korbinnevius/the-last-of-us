@@ -31,7 +31,7 @@ public class BallSkeleton : MonoBehaviour
         SetRadiusToCurrent();
         SetMaxVelocity();
         
-        BallLaunch();
+        //BallLaunch();
         
         //make the center property not required, just use world center if it's not set.
         //Create center object if it doesnt exist.

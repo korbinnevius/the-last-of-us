@@ -13,7 +13,6 @@ public class PaddleController : MonoBehaviour
     /// </summary>
 
     public GameObject parentRotationalObject;
-    [FormerlySerializedAs("_rotationalVector3")] [SerializeField]
     private Quaternion _movementQuaternion;
 
     public float rotationDegree;
@@ -22,12 +21,10 @@ public class PaddleController : MonoBehaviour
     void Start()
     {
         _movementQuaternion = new Quaternion(0, rotationDegree, 0, 0);
-        
     }
     
     void Update()
     {
-        
         parentRotationalObject.transform.rotation *= Quaternion.Euler(0, rotationDegree, 0);
         //Mathf.Clamp(rotationDegree, 0.1f, 359.9f);
     }
