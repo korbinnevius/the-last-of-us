@@ -23,6 +23,6 @@ public class ClearValues : MonoBehaviour
         gameMgrScriptableObject.totalBounces = 0;
         gameMgrScriptableObject.totalScore = 0;
         gameMgrScriptableObject.roundScore = 0;
-        gameMgrScriptableObject.bricksInScene = 0;
+        gameMgrScriptableObject.startBricksInScene = 0;
     }
 }

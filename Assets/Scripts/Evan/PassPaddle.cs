@@ -10,7 +10,9 @@ public class PassPaddle : MonoBehaviour
     [SerializeField] private GameMGRScriptableObject gameMgrScriptableObject;
 
     public UnityEvent PaddleHasBeenPassedEvent;
-    
+    public PlayerInputKeyboard playerInputKeyboard;
+    public HandInputCharacterController handInputCharacterController;
+
     //This script is called on a on trigger enter. Calls a coroutine that subtracts a life and resets the ball
     //back to its paddle to be launched again.
 
@@ -24,7 +26,7 @@ public class PassPaddle : MonoBehaviour
     {
         gameMgrScriptableObject.totalLives -= 1;
         yield return new WaitForSeconds(3);
-        PaddleHasBeenPassedEvent.Invoke();
+        PaddleHasBeenPassedEvent.Invoke();  
         yield return null;
     }
 }

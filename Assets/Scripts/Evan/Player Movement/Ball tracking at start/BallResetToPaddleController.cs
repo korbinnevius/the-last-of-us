@@ -20,6 +20,7 @@ public class BallResetToPaddleController : MonoBehaviour
     private void Update()
     {
         AttatchToPaddle();
+        ResetBallMotion();
     }
 
     private void AttatchToPaddle()

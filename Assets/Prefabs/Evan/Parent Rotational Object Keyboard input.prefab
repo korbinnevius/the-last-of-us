@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 3344724175091801050}
   - component: {fileID: 2214878825845995098}
   - component: {fileID: 6575404279849589539}
+  - component: {fileID: 9208129545397805183}
   m_Layer: 0
   m_Name: paddle
   m_TagString: Untagged
@@ -185,6 +186,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballSkeleton: {fileID: 0}
+  ballLaunched: 0
+  onLaunchEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6575404279849589539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,7 +197,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8145026319742507922}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7010fad82d1edf348bddb5898f70e755, type: 3}
   m_Name: 
@@ -200,3 +205,18 @@ MonoBehaviour:
   parentRotationalObject: {fileID: 4474821631698186650}
   rotationDegree: 0
   rotationalSpeed: 100
+--- !u!114 &9208129545397805183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8145026319742507922}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba7c9c07776b58458dfa322447286cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childTargetObject: {fileID: 0}
+  parentRotationObject: {fileID: 4474821631698186650}
+  ballSkeleton: {fileID: 0}

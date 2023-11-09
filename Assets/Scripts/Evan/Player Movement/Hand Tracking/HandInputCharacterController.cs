@@ -13,12 +13,8 @@ public class HandInputCharacterController : MonoBehaviour
 
     public GameObject childTargetObject;
     public GameObject parentRotationObject;
-    
 
-    void Start()
-    {
-        
-    }
+    public BallSkeleton ballSkeleton;
 
     // Update is called once per frame
     void Update()
@@ -30,5 +26,11 @@ public class HandInputCharacterController : MonoBehaviour
     {
         Vector3 TargetPositon = childTargetObject.transform.position;
         parentRotationObject.transform.rotation = Quaternion.LookRotation(TargetPositon, Vector3.up);
+    }
+
+    private void PinchToLaunch()
+    {
+        //Will launch ball when the gesture manager detects a pinch.
+        ballSkeleton.BallLaunch();
     }
 }
