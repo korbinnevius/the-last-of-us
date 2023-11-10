@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a68a7bc76de7f9d46bfffd2a4df29d37, type: 2}
+  - {fileID: 2100000, guid: 0c8f2e65b661f3b42af6b5d88961fe19, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4845929116755789023}
   m_Layer: 0
-  m_Name: bALL
+  m_Name: Fractured Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -177,7 +177,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73214e6a06f1c8742b13f8d4f790c4ef, type: 2}
+  - {fileID: 2100000, guid: 0a1c10715cf7fba46a9d0279bf9af133, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
