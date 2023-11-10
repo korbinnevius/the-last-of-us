@@ -5,26 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class BrickCounter : MonoBehaviour
 {
-    public int startBrickCount;
-    public int brickCount;
-    public bool doBrickCount;
-
     public GameMGRScriptableObject GameMgrScriptableObject;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        // if (doBrickCount)
-        // {
-        //     BegginingBrickCount();
-        // }
-        GameMgrScriptableObject.startBricksInScene = 5;
-        
         if (GameMgrScriptableObject.startBricksInScene == GameMgrScriptableObject.bricksDestroyed)
         {
             //Restart Scene Logic

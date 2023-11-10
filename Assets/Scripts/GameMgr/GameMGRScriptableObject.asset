@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: GameMGRScriptableObject
   m_EditorClassIdentifier: 
   totalLives: 3
-  bricksDestroyed: 19
+  bricksDestroyed: 0
   startBricksInScene: 5
   totalBounces: 0
   totalScore: 0
-  roundScore: 0
-  gameState: 0
+  roundScore: 105
   spawnProbability: 5

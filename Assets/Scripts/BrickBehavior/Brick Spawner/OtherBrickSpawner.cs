@@ -7,11 +7,13 @@ using Random = UnityEngine.Random;
 
 public class CenterSurrounder : MonoBehaviour
 {
-    public GameObject OriginalSurrounderObject;
+    //How far brick spawns from spawners
     public float Radius;
+    //Max number of bricks that can spawn
     public int SurrounderObjectCount;
-    private float angleStep;
+    //Put brick object here
     public GameObject brick;
+    //Put Scriptable Object of game Manager here
     public GameMGRScriptableObject GameMgrScriptableObject;
     
     
@@ -19,75 +21,93 @@ public class CenterSurrounder : MonoBehaviour
     private GameObject empty;
     private readonly float AppearWaitDuration = 0.3f;
     private Transform SurrounderParentTransform;
+    private bool brickSpawnerCoRoutineStarted;
   
 
     void Start()
     {
-        spawnProbability = GameMgrScriptableObject.spawnProbability;
+        //bool for checking to see if coroutine is running
+        brickSpawnerCoRoutineStarted = true;
+        //creates empty thats one of two things that the object spawns in
         empty = new GameObject();
+        //setting anchor transform for rotation
         SurrounderParentTransform = transform;
-        SurroundStepAnimated();
+        //SpawnBrick();
         
     }
 
     private void Update()
     {
+        
+        //This checks to see if the amount of bricks in the scene is zero, and if it is then brick coroutine spawns
+        if ((GameMgrScriptableObject.startBricksInScene = GameObject.FindGameObjectsWithTag("Brick").Length) == 0)
+        {
+          
+            if (brickSpawnerCoRoutineStarted == true)
+            {
+                StartCoroutine(SpawnBrickTimed());
+                GameMgrScriptableObject.spawnProbability -= 1;
+            }
+           
+        }
        
     }
-
-    // void SurroundStepAnimated()
+    // public void SpawnBrick()
     // {
-    //     for (int i = 0; i < SurrounderObjectCount; i++)
-    //     {
-    //         float radius = Radius;
-    //         //Getting percents from Amnt of Objects
-    //         float percent = i / (float)SurrounderObjectCount;
-    //         //remap to range 0->2pi.
-    //         float x = percent * 2*Mathf.PI;
-    //         //dir is position on unit circle
-    //         Vector3 dir = new Vector3(Mathf.Cos(x), 0, Mathf.Sin(x)).normalized;
-    //         //offseting 
-    //         Vector3 pos = transform.position + dir*radius;
-    //         //
-    //         Quaternion orientation = Quaternion.LookRotation(-dir,Vector3.up);
-    //         GameObject newSurrounderObject = Instantiate(OriginalSurrounderObject,pos,orientation,SurrounderParentTransform);
-    //         
-    //        // newSurrounderObject.transform.RotateAround(wrapDistance, Vector3.up, angleStep * i);
-    //
-    //         
-    //     }
-    //
+    //         for (int i = 0; i < SurrounderObjectCount; i++)
+    //         {
+    //             int spawnPick = Random.Range(0, GameMgrScriptableObject.spawnProbability);
+    //             float radius = Radius;
+    //             //Getting percents from Amnt of Objects
+    //             float percent = i / (float)SurrounderObjectCount;
+    //             //remap to range 0->2pi.
+    //             float x = percent * 2 * Mathf.PI;
+    //             //dir is position on unit circle
+    //             Vector3 dir = new Vector3(Mathf.Cos(x), 0, Mathf.Sin(x)).normalized;
+    //             //offseting 
+    //             Vector3 pos = transform.position + dir * radius;
+    //             //
+    //             Quaternion orientation = Quaternion.LookRotation(-dir, Vector3.up);
+    //             if (spawnPick == 0)
+    //             {
+    //                 Instantiate(brick, pos, orientation, SurrounderParentTransform);
+    //             }
+    //             else
+    //             {
+    //                 Instantiate(empty, pos, orientation, SurrounderParentTransform);
+    //             }
+    //         }
     // }
-    void SurroundStepAnimated()
-    {
-        for (int i = 0; i < SurrounderObjectCount; i++)
-        {
-            int spawnPick = Random.Range(0, spawnProbability);
-            float radius = Radius;
-            //Getting percents from Amnt of Objects
-            float percent = i / (float)SurrounderObjectCount;
-            //remap to range 0->2pi.
-            float x = percent * 2*Mathf.PI;
-            //dir is position on unit circle
-            Vector3 dir = new Vector3(Mathf.Cos(x), 0, Mathf.Sin(x)).normalized;
-            //offseting 
-            Vector3 pos = transform.position + dir*radius;
-            //
-            Quaternion orientation = Quaternion.LookRotation(-dir,Vector3.up);
-            if (spawnPick == 0)
-            {
-                Instantiate(brick,pos,orientation,SurrounderParentTransform);
-            }
-            else
-            {
-                Instantiate(empty,pos,orientation,SurrounderParentTransform);
-            }
-            
-            // newSurrounderObject.transform.RotateAround(wrapDistance, Vector3.up, angleStep * i);
-            
-            
-            
-        }
 
+    private IEnumerator SpawnBrickTimed()
+    {
+        brickSpawnerCoRoutineStarted = false;
+        yield return new WaitForSeconds(1.0f);
+            for (int i = 0; i < SurrounderObjectCount; i++)
+            {
+                //probability logic for brick spawning
+                int spawnPick = Random.Range(0, GameMgrScriptableObject.spawnProbability);
+                float radius = Radius;
+                //Getting percents from Amnt of Objects
+                float percent = i / (float)SurrounderObjectCount;
+                //remap to range 0->2pi.
+                float x = percent * 2 * Mathf.PI;
+                //dir is position on unit circle
+                Vector3 dir = new Vector3(Mathf.Cos(x), 0, Mathf.Sin(x)).normalized;
+                //offseting 
+                Vector3 pos = transform.position + dir * radius;
+                //
+                Quaternion orientation = Quaternion.LookRotation(-dir, Vector3.up);
+                if (spawnPick == 0)
+                {
+                    Instantiate(brick, pos, orientation, SurrounderParentTransform);
+                }
+                else
+                {
+                    Instantiate(empty, pos, orientation, SurrounderParentTransform);
+                }
+            }
+            yield return brickSpawnerCoRoutineStarted = true;
+           
     }
 }
