@@ -16,17 +16,14 @@ public class PlayerInputKeyboard : MonoBehaviour
     public bool ballLaunched = false;
 
     public UnityEvent onLaunchEvent;
-    
-    //Sound
-    public AudioClip _metalGrinding;
-    private AudioSource _audioSource;
+
 
     // Update is called once per frame
 
     private void Awake()
     {
         _paddleController = GetComponent<PaddleController>();
-        _audioSource = GetComponent<AudioSource>();
+        
     }
 
     void Update()
@@ -43,18 +40,13 @@ public class PlayerInputKeyboard : MonoBehaviour
             _paddleController.RotateRight();
             
             //Sorry Evan, Malik is putting in some sound effects here.
-            
-            _audioSource.clip = _metalGrinding;
-            _audioSource.Play();
+
         }
         else if (Input.GetKey(KeyCode.A))
         {
             _paddleController.RotateLeft();
             
             //Sorry Evan, Malik is putting in some sound effects here.
-            
-            _audioSource.clip = _metalGrinding;
-            _audioSource.Play();
         }
         else
         {
