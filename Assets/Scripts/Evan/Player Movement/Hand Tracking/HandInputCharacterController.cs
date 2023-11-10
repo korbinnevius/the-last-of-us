@@ -14,7 +14,9 @@ public class HandInputCharacterController : MonoBehaviour
     public GameObject childTargetObject;
     public GameObject parentRotationObject;
 
-    public BallSkeleton ballSkeleton;
+    [SerializeField] private BallSkeleton ballSkeleton;
+
+    public bool ballLaunched;
 
     // Update is called once per frame
     void Update()
@@ -28,9 +30,19 @@ public class HandInputCharacterController : MonoBehaviour
         parentRotationObject.transform.rotation = Quaternion.LookRotation(TargetPositon, Vector3.up);
     }
 
-    private void PinchToLaunch()
+    public void PoseHandToLaunch()
     {
         //Will launch ball when the gesture manager detects a pinch.
-        ballSkeleton.BallLaunch();
+        if (!ballLaunched)
+        {
+            ballSkeleton.BallLaunch();
+        }
+        Debug.Log("I have been posed!");
+        ballLaunched = true;
+    }
+    
+    public void setLaunchBool()
+    { 
+        ballLaunched = false;
     }
 }
