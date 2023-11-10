@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdb0afebca883e84a962df88156f303e, type: 3}
   m_Name: GameMGRScriptableObject
   m_EditorClassIdentifier: 
-  totalLives: 0
+  totalLives: 3
   bricksDestroyed: 19
   startBricksInScene: 5
   totalBounces: 0
   totalScore: 0
   roundScore: 0
   gameState: 0
+  spawnProbability: 5
