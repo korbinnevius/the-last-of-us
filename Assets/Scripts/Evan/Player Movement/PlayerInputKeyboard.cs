@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 public class PlayerInputKeyboard : MonoBehaviour
 {
@@ -8,6 +10,12 @@ public class PlayerInputKeyboard : MonoBehaviour
     /// This will call the current in use controller.
     /// </summary>
     private PaddleController _paddleController;
+    [SerializeField]
+    private BallSkeleton ballSkeleton;
+
+    public bool ballLaunched = false;
+
+    public UnityEvent onLaunchEvent; 
 
     // Update is called once per frame
 
@@ -18,7 +26,9 @@ public class PlayerInputKeyboard : MonoBehaviour
 
     void Update()
     {
+        
         ButtonControlls();
+        LaunchBallCall();
     }
 
     private void ButtonControlls()
@@ -35,5 +45,20 @@ public class PlayerInputKeyboard : MonoBehaviour
         {
             _paddleController.NoRotation();
         }
+    }
+
+    private void LaunchBallCall()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && !ballLaunched)
+        {
+            onLaunchEvent.Invoke();
+            ballSkeleton.BallLaunch();
+            ballLaunched = true;
+        }
+    }
+
+    public void setLaunchBool()
+    {
+        ballLaunched = false;
     }
 }

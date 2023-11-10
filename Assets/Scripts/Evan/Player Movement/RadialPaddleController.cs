@@ -5,46 +5,39 @@ using Input = TiltFive.Input;
 using Unity.Mathematics;
 using UnityEngine.Serialization;
 
-public class PaddleController : MonoBehaviour
+public class RadialPaddleController : MonoBehaviour
 {
     /// <summary>
-    /// Controlls the rotation of a object. This is a preliminary movement controller to make a more satisfying one
-    /// in th efuture
+    /// has several values that set rotation of object too position.. will use rotate towards
     /// </summary>
 
     public GameObject parentRotationalObject;
     private Quaternion _movementQuaternion;
-
     public float rotationDegree;
     public float rotationalSpeed;
-    
+
+    public List<GameObject> paddleRotationPositionList;
+
+
+
     void Start()
     {
         _movementQuaternion = new Quaternion(0, rotationDegree, 0, 0);
+        
     }
     
     void Update()
     {
+        
         parentRotationalObject.transform.rotation *= Quaternion.Euler(0, rotationDegree, 0);
         //Mathf.Clamp(rotationDegree, 0.1f, 359.9f);
     }
-    
-    
 
-    public void RotateLeft()
-    {
-        rotationDegree = rotationalSpeed * Time.deltaTime;
-        //Debug.Log("called left");
-    }
 
-    public void RotateRight()
-    {
-        rotationDegree = -rotationalSpeed * Time.deltaTime;
-        //Debug.Log("Called right");
-    }
 
-    public void NoRotation()
+    public void SetRotationOfPaddle()
     {
-        rotationDegree = 0;
+        // set rotation of object
+        // Remember quaternion rotate towards.
     }
 }
