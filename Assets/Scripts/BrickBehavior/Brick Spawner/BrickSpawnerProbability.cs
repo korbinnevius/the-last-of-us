@@ -19,9 +19,8 @@ public class BrickSpawnerProbability : MonoBehaviour
     }
     
     private void RandomSpawn()
-   {
-       
-       int spawnPick = Random.Range(0, spawnProbability);
+    {
+        int spawnPick = Random.Range(0, spawnProbability);
        if (spawnPick == 0)
        {
            Instantiate(brick);
