@@ -7,12 +7,15 @@ public class PaddleCollision : MonoBehaviour
     public AudioClip _ballThump;
     public AudioClip _ballToBrickCollisionSound;
     public AudioClip _cylinderCollision;
-    private AudioSource _audioSource;
+    public AudioClip _powerUp;
+    public AudioSource _audioSource;
+    public AudioSource _audioSourcePowerUp;
 
     // Start is called before the first frame update
     void Start()
     {
-        _audioSource = GetComponent<AudioSource>();
+        // _audioSource = GetComponent<AudioSource>();
+        // _audioSourcePowerUp = GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -49,6 +52,12 @@ public class PaddleCollision : MonoBehaviour
             _audioSource.clip = _cylinderCollision;
             _audioSource.Play();
             Debug.Log("I have made contact with the bottom of the cylinder");
+        }
+        if (collision.collider.CompareTag("Powerup"))
+        {
+            _audioSourcePowerUp.clip = _powerUp;
+            _audioSourcePowerUp.Play();
+            Debug.Log("I have made contact with a the powerup");
         }
     }
 }
