@@ -24,5 +24,6 @@ public class ClearValues : MonoBehaviour
         gameMgrScriptableObject.totalScore = 0;
         gameMgrScriptableObject.roundScore = 0;
         gameMgrScriptableObject.startBricksInScene = 0;
+        gameMgrScriptableObject.spawnProbability = 8;
     }
 }

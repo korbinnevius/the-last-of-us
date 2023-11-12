@@ -19,7 +19,7 @@ public class CenterSurrounder : MonoBehaviour
     
     
     private int spawnProbability;
-    private GameObject empty;
+    public GameObject emtpyPrefab;
     private readonly float AppearWaitDuration = 0.3f;
     private Transform SurrounderParentTransform;
     private bool brickSpawnerCoRoutineStarted;
@@ -28,9 +28,9 @@ public class CenterSurrounder : MonoBehaviour
     void Start()
     {
         //bool for checking to see if coroutine is running
-        brickSpawnerCoRoutineStarted = true;
+        brickSpawnerCoRoutineStarted = false;
         //creates empty thats one of two things that the object spawns in
-        empty = new GameObject();
+        emtpyPrefab = new GameObject();
         //setting anchor transform for rotation
         SurrounderParentTransform = transform;
         //SpawnBrick();
@@ -45,7 +45,7 @@ public class CenterSurrounder : MonoBehaviour
         if ((GameMgrScriptableObject.startBricksInScene = GameObject.FindGameObjectsWithTag("Brick").Length) == 0)
         {
           
-            if (brickSpawnerCoRoutineStarted)
+            if (!brickSpawnerCoRoutineStarted)
             {
                 StartCoroutine(SpawnBrickTimed());
                 GameMgrScriptableObject.spawnProbability -= 1;
@@ -58,7 +58,7 @@ public class CenterSurrounder : MonoBehaviour
 
     private IEnumerator SpawnBrickTimed()
     {
-        brickSpawnerCoRoutineStarted = false;
+        brickSpawnerCoRoutineStarted = true;
         yield return new WaitForSeconds(1.0f);
             for (int i = 0; i < maxBrickCount; i++)
             {
@@ -81,10 +81,10 @@ public class CenterSurrounder : MonoBehaviour
                 }
                 else
                 {
-                    Instantiate(empty, pos, orientation, SurrounderParentTransform);
+                    Instantiate(emtpyPrefab, pos, orientation, SurrounderParentTransform);
                 }
             }
-            yield return brickSpawnerCoRoutineStarted = true;
+            yield return brickSpawnerCoRoutineStarted = false;
            
     }
   
