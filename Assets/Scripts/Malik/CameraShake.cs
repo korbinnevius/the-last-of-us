@@ -7,26 +7,28 @@ public class CameraShake : MonoBehaviour
     public float duration = 1f;
 
     public AnimationCurve curve;
+
+    public bool start = false;
     
    
-    //
-    // // Update is called once per frame
-    // void Update()
-    // {
-    //     if (start)
-    //     {
-    //         start = false;
-    //         StartCoroutine(Shaking());
-    //     }
-    // }
-
-    private void OnCollisionEnter(Collision collision)
+    
+    // Update is called once per frame
+    void Update()
     {
-        if (collision.collider.CompareTag("Brick"))
+        if (start)
         {
+            start = false;
             StartCoroutine(Shaking());
         }
     }
+
+    // private void OnCollisionEnter(Collision collision)
+    // {
+    //     if (collision.collider.CompareTag("Brick"))
+    //     {
+    //         StartCoroutine(Shaking());
+    //     }
+    // }
 
     IEnumerator Shaking()
     {
@@ -37,8 +39,8 @@ public class CameraShake : MonoBehaviour
         while (elaspedTime < duration)
         {
             elaspedTime += Time.deltaTime;
-            //float strength = curve.Evaluate(elaspedTime / duration);
-            transform.position = startPosition + Random.insideUnitSphere;
+            float strength = curve.Evaluate(elaspedTime / duration);
+            transform.position = startPosition + Random.insideUnitSphere * strength;
             yield return null; //to continue the execution at the next frame.
         }
 
