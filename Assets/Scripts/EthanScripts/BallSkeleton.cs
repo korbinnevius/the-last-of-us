@@ -19,6 +19,7 @@ public class BallSkeleton : MonoBehaviour
     
     public float MaxSpeed = 50f;
     public float MaxSpeedRateOT;
+    public float BounceForce = 0f;
 
     private bool BallIsLaunched;
 
@@ -31,7 +32,7 @@ public class BallSkeleton : MonoBehaviour
         SetRadiusToCurrent();
         SetMaxVelocity();
         
-        //BallLaunch();
+        BallLaunch();
         
         //make the center property not required, just use world center if it's not set.
         //Create center object if it doesnt exist.
@@ -77,15 +78,15 @@ public class BallSkeleton : MonoBehaviour
     {
         
         MaxSpeed = MaxSpeed + MaxSpeedRateOT * Time.deltaTime ;
-        
+        //Debug.Log(_rigidbody.velocity.magnitude);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.other.gameObject.CompareTag("Brick"))
-        {
-            _rigidbody.AddForce(_rigidbody.velocity.normalized * 0.01f,ForceMode.Force);
-        }
+        //Debug.Log("boop");
+        _rigidbody.AddForce(collision.impulse.normalized * BounceForce,ForceMode.Force);
+        //Debug.Log("Collided");
+        
     }
 
     public void BallLaunch()
