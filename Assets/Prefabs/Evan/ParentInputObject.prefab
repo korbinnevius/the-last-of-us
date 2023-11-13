@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 3818950013945679839}
   m_Layer: 0
   m_Name: paddle-uv
-  m_TagString: Untagged
+  m_TagString: Paddle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
