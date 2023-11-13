@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb62a10463ebf89469d61def0c6e1849, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Radius: 5
+  Radius: 4.2
   maxBrickCount: 6
   brick: {fileID: 6368906866775946652, guid: 94c974a242c9aa24d816c0514a9aa5f3, type: 3}
   GameMgrScriptableObject: {fileID: 11400000, guid: 0d4ac9b8b32fa514bb98f9adaf49628b,
