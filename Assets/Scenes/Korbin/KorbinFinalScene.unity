@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: f769bdaacc149ac4f833489a5a808027,
     type: 2}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: 611aa380cf77b044ea41a73018449f61,
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 59d4ac89b4930f642977909ac4def0f0,
     type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -7279,7 +7279,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!1 &5484370357590940691
 GameObject:
