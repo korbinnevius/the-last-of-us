@@ -9,7 +9,7 @@ public class PaddleCollision : MonoBehaviour
     public AudioClip _cylinderCollision;
     public AudioClip _powerUp;
     public AudioSource _audioSource;
-    public AudioSource _audioSourcePowerUp;
+    //public AudioSource _audioSourcePowerUp;
 
     // Start is called before the first frame update
     void Start()
@@ -55,8 +55,9 @@ public class PaddleCollision : MonoBehaviour
         }
         if (collision.collider.CompareTag("Powerup"))
         {
-            _audioSourcePowerUp.clip = _powerUp;
-            _audioSourcePowerUp.Play();
+            //_audioSourcePowerUp.clip = _powerUp;
+            _audioSource.Play();
+           // _audioSourcePowerUp.Play();
             Debug.Log("I have made contact with a the powerup");
         }
     }
