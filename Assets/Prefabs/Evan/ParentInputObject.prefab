@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8481525207605449214}
   - component: {fileID: 2239418570336509399}
   - component: {fileID: 2992323023130737858}
+  - component: {fileID: 6436446291876398798}
   m_Layer: 0
   m_Name: ParentInputObject
   m_TagString: Untagged
@@ -67,6 +68,22 @@ MonoBehaviour:
   onLaunchEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6436446291876398798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2687422017171247974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba7c9c07776b58458dfa322447286cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childTargetObject: {fileID: 0}
+  parentRotationObject: {fileID: 2687422017171247974}
+  ballSkeleton: {fileID: 0}
+  ballLaunched: 0
 --- !u!1 &3058153131162186793
 GameObject:
   m_ObjectHideFlags: 0
