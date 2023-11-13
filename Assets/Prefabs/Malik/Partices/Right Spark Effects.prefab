@@ -4842,7 +4842,7 @@ GameObject:
   - component: {fileID: 5782556898457547431}
   - component: {fileID: 5072243250378880614}
   m_Layer: 0
-  m_Name: Right Spark Effects (1)
+  m_Name: Right Spark Effects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
