@@ -7,16 +7,23 @@ public class CameraShake : MonoBehaviour
     public float duration = 1f;
 
     public AnimationCurve curve;
-
-    public bool start = false;
+    
    
+    //
+    // // Update is called once per frame
+    // void Update()
+    // {
+    //     if (start)
+    //     {
+    //         start = false;
+    //         StartCoroutine(Shaking());
+    //     }
+    // }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        if (start)
+        if (collision.collider.CompareTag("Brick"))
         {
-            start = false;
             StartCoroutine(Shaking());
         }
     }
