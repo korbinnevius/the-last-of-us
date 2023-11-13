@@ -10,7 +10,7 @@ public class GameMGRScriptableObject : ScriptableObject
     public int totalBounces;
     public int totalScore;
     public int roundScore;
-    public GameState gameState;
+    public int spawnProbability;
 
-    
+
 }

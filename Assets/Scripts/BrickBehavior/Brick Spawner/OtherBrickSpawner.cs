@@ -2,66 +2,116 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 
 public class CenterSurrounder : MonoBehaviour
 {
-    public GameObject OriginalSurrounderObject;
+    //How far brick spawns from spawner
     public float Radius;
-    public int SurrounderObjectCount;
-    private float angleStep;
-
+    //Max number of bricks that can spawn
+    public int maxBrickCount;
+    //Put brick object here
+    public GameObject brick;
+    //Put Scriptable Object of game Manager here
+    public GameMGRScriptableObject GameMgrScriptableObject;
+    
+    
+    private int spawnProbability;
+    public GameObject emtpyPrefab;
     private readonly float AppearWaitDuration = 0.3f;
     private Transform SurrounderParentTransform;
+    private bool brickSpawnerCoRoutineStarted;
+  
 
     void Start()
     {
-        //SurrounderParentTransform = new GameObject(gameObject.name + " Surrounder Parent").transform;
+        //bool for checking to see if coroutine is running
+        brickSpawnerCoRoutineStarted = false;
+        //creates empty thats one of two things that the object spawns in
+        emtpyPrefab = new GameObject();
+        //setting anchor transform for rotation
         SurrounderParentTransform = transform;
-        // StartCoroutine(SurroundStepAnimated());
-        SurroundStepAnimated();
+        //SpawnBrick();
+        
     }
-    
-    // IEnumerator SurroundStepAnimated()
-    // {
-    //     yield return new WaitForSeconds(AppearWaitDuration);
-    //
-    //          angleStep  /= SurrounderObjectCount;
-    //
-    //     OriginalSurrounderObject.transform.SetParent(SurrounderParentTransform);
-    //
-    //     for (int i = 1; i < SurrounderObjectCount; i++)
-    //     {
-    //         GameObject newSurrounderObject = Instantiate(OriginalSurrounderObject);
-    //
-    //         newSurrounderObject.transform.RotateAround(transform.position, Vector3.up, angleStep * i);
-    //         newSurrounderObject.transform.SetParent(SurrounderParentTransform);
-    //
-    //         yield return new WaitForSeconds(AppearWaitDuration);
-    //     }
-    //
-    // }
-    void SurroundStepAnimated()
+
+    private void Update()
     {
-        for (int i = 0; i < SurrounderObjectCount; i++)
+        
+        //This checks to see if the amount of bricks in the scene is zero, and if it is then brick coroutine begins
+        //This is level logic
+        if ((GameMgrScriptableObject.startBricksInScene = GameObject.FindGameObjectsWithTag("Brick").Length) == 0)
         {
-            float radius = Radius;
-            //Getting percents from Amnt of Objects
-            float percent = i / (float)SurrounderObjectCount;
-            //remap to range 0->2pi.
-            float x = percent * 2*Mathf.PI;
-            //dir is position on unit circle
-            Vector3 dir = new Vector3(Mathf.Cos(x), 0, Mathf.Sin(x)).normalized;
-            //offseting 
-            Vector3 pos = transform.position + dir*radius;
-            //
-            Quaternion orientation = Quaternion.LookRotation(-dir,Vector3.up);
-            GameObject newSurrounderObject = Instantiate(OriginalSurrounderObject,pos,orientation,SurrounderParentTransform);
-            
-           // newSurrounderObject.transform.RotateAround(wrapDistance, Vector3.up, angleStep * i);
-
-            
+          
+            if (!brickSpawnerCoRoutineStarted)
+            {
+                StartCoroutine(SpawnBrickTimed());
+                GameMgrScriptableObject.spawnProbability -= 1;
+            }
+           
         }
-
+       
     }
+   
+
+    private IEnumerator SpawnBrickTimed()
+    {
+        brickSpawnerCoRoutineStarted = true;
+        yield return new WaitForSeconds(1.0f);
+            for (int i = 0; i < maxBrickCount; i++)
+            {
+                //probability logic for brick spawning
+                int spawnPick = Random.Range(0, GameMgrScriptableObject.spawnProbability);
+                float radius = Radius;
+                //Getting percents from Amnt of Objects
+                float percent = i / (float)maxBrickCount;
+                //remap to range 0->2pi.
+                float x = percent * 2 * Mathf.PI;
+                //dir is position on unit circle
+                Vector3 dir = new Vector3(Mathf.Cos(x), 0, Mathf.Sin(x)).normalized;
+                //offseting 
+                Vector3 pos = transform.position + dir * radius;
+                //
+                Quaternion orientation = Quaternion.LookRotation(-dir, Vector3.up);
+                if (spawnPick == 0)
+                {
+                    Instantiate(brick, pos, orientation, SurrounderParentTransform);
+                }
+                else
+                {
+                    Instantiate(emtpyPrefab, pos, orientation, SurrounderParentTransform);
+                }
+            }
+            yield return brickSpawnerCoRoutineStarted = false;
+           
+    }
+  
 }
+// public void SpawnBrick()
+// {
+//         for (int i = 0; i < SurrounderObjectCount; i++)
+//         {
+//             int spawnPick = Random.Range(0, GameMgrScriptableObject.spawnProbability);
+//             float radius = Radius;
+//             //Getting percents from Amnt of Objects
+//             float percent = i / (float)SurrounderObjectCount;
+//             //remap to range 0->2pi.
+//             float x = percent * 2 * Mathf.PI;
+//             //dir is position on unit circle
+//             Vector3 dir = new Vector3(Mathf.Cos(x), 0, Mathf.Sin(x)).normalized;
+//             //offseting 
+//             Vector3 pos = transform.position + dir * radius;
+//             //
+//             Quaternion orientation = Quaternion.LookRotation(-dir, Vector3.up);
+//             if (spawnPick == 0)
+//             {
+//                 Instantiate(brick, pos, orientation, SurrounderParentTransform);
+//             }
+//             else
+//             {
+//                 Instantiate(empty, pos, orientation, SurrounderParentTransform);
+//             }
+//         }
+// }

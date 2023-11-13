@@ -18,6 +18,8 @@ public class PlayPowerUpMusic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // For testing on the keyboard
+        
         if (Input.GetKeyDown(KeyCode.M))
         {
            // musicPlaying = false;

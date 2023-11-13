@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 
 public class ClearValues : MonoBehaviour
 {
     public GameMGRScriptableObject gameMgrScriptableObject;
+    public int startBrickSpawnProbability;
 
     private void Awake()
     {
@@ -24,5 +26,6 @@ public class ClearValues : MonoBehaviour
         gameMgrScriptableObject.totalScore = 0;
         gameMgrScriptableObject.roundScore = 0;
         gameMgrScriptableObject.startBricksInScene = 0;
+        gameMgrScriptableObject.spawnProbability = startBrickSpawnProbability;
     }
 }
