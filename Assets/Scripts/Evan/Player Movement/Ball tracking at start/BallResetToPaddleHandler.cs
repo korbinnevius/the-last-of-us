@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class BallResetToPaddleController : MonoBehaviour
+public class BallResetToPaddleHandler : MonoBehaviour
 {
     [SerializeField] private GameObject ballObject;
     [SerializeField] private Rigidbody ballRidgidbody;
@@ -13,8 +13,8 @@ public class BallResetToPaddleController : MonoBehaviour
     [SerializeField] private GameObject paddleObjectTransform;
 
     /// <summary>
-    /// This is a function controller for the Pass Paddle manager to call. It will call until it recognizes that
-    /// a bool has been set to false.
+    /// This object sets the position of the current ball in scene to a transform parented under the ParentInputObject.
+    /// Is meant to be disabled and enabled.
     /// </summary>
     // Update is called once per frame
     private void Update()
