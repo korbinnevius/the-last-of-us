@@ -15,7 +15,7 @@ public class BrickAwakener : MonoBehaviour
     {
         //checking if score gets to 30
         //for loop that awakens all children of object this is assigned too
-        if (GameMgrScriptableObject.totalScore >= scoreForAwaken)//GameMgrScriptableObject.spawnProbability == 1)
+        if (GameMgrScriptableObject.roundScore >= scoreForAwaken)//GameMgrScriptableObject.spawnProbability == 1)
         {
             for (int i = 0; i < transform.childCount; i++)
             {

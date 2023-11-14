@@ -2619,8 +2619,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  playerInputKeyboard: {fileID: 0}
-  handInputCharacterController: {fileID: 0}
 --- !u!1 &1464860190 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8639231362450923181, guid: cb3438af94c8f364991404228bf237a5,
