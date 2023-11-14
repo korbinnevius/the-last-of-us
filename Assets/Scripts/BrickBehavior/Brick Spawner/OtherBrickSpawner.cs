@@ -50,7 +50,12 @@ public class CenterSurrounder : MonoBehaviour
                 StartCoroutine(SpawnBrickTimed());
                 GameMgrScriptableObject.spawnProbability -= 1;
             }
-           
+
+            if (GameMgrScriptableObject.spawnProbability <= 1)
+            {
+                GameMgrScriptableObject.spawnProbability = 10;
+            }
+
         }
        
     }

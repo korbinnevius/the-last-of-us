@@ -11,6 +11,5 @@ public class GameMGRScriptableObject : ScriptableObject
     public int totalScore;
     public int roundScore;
     public int spawnProbability;
-
-
+    
 }

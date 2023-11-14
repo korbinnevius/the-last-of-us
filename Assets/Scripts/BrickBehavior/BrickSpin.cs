@@ -10,6 +10,7 @@ public class BrickSpin : MonoBehaviour
     private float rotationConstantSpeed;
     void Update()
     {
+        //Spins the spawner
         rotationConstantSpeed = rotationSpeed * Time.deltaTime;
         transform.rotation *= Quaternion.Euler(0,rotationConstantSpeed,0);
     }
