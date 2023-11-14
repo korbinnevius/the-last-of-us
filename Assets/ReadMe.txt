@@ -28,3 +28,16 @@ Hand above the tracker will move the paddle up, right toward the right, etc.
 
 Sources:
 
+Sounds and screen shake video
+
+2023, M. B. (2023). Rock Smash Sound Effect. Retrieved from YouTube: https://www.youtube.com/watch?v=RL-A9BES1hE
+courtneyeck. 
+(2023, 02 07). Loud Taps Echoing. Retrieved from Freesound: https://freesound.org/people/courtneyeck/sounds/673426/
+Friday, T. (2021). How to Code a Screen Shake Effect. Retrieved from YouTube: https://www.youtube.com/watch?v=TEFn1sB_XzI
+Kevin_Gamble... (2018, 10 25). Fresh Factory Nightmare.wav. Retrieved from Freesound: https://freesound.org/people/Kevin_Gamble_Media/sounds/441285/
+MATRIXXX_. 
+(2022, 11 07). Retro, SciFi Laser Sword, Unsheathed.wav. Retrieved from Freesound: https://freesound.org/people/MATRIXXX_/sounds/657939/
+Michelle, S. (2019). Electricity Sound Effect xd(Thx for 1M Views!). Retrieved from YouTube: https://www.youtube.com/watch?v=TEFn1sB_XzI
+Wang, E. (2008). Kid Buu Theme. Retrieved from YouTube: https://www.youtube.com/watch?v=dCml8RaoVGE
+
+
