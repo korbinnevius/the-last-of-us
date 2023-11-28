@@ -53,12 +53,12 @@ public class PaddleCollision : MonoBehaviour
             _audioSource.Play();
             Debug.Log("I have made contact with the bottom of the cylinder");
         }
-        if (collision.collider.CompareTag("Powerup"))
-        {
-            //_audioSourcePowerUp.clip = _powerUp;
-            _audioSource.Play();
-           // _audioSourcePowerUp.Play();
-            Debug.Log("I have made contact with a the powerup");
-        }
+        // if (collision.collider.CompareTag("Powerup"))
+        // {
+        //     //_audioSourcePowerUp.clip = _powerUp;
+        //     _audioSource.Play();
+        //    // _audioSourcePowerUp.Play();
+        //     Debug.Log("I have made contact with a the powerup");
+        // }
     }
 }

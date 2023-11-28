@@ -17,6 +17,7 @@ public class PassPaddle : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Ball passed paddle");
         StartCoroutine(ThePaddleHasBeenPassed());
     }
 
