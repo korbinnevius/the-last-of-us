@@ -516,7 +516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameMgrScriptableObject: {fileID: 11400000, guid: 0d4ac9b8b32fa514bb98f9adaf49628b,
     type: 2}
-  disableSpawner: 0
+  scoreForAwaken: 30
 --- !u!4 &214203843
 Transform:
   m_ObjectHideFlags: 0
@@ -1458,7 +1458,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 4766512439592210637}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40c92966336507845bdd5211dbc6a43f, type: 3}
   m_Name: 
@@ -1908,6 +1908,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -7413060155602135395, guid: 2caa4dd79a70a7e41b2b651ff67d8a78,
     type: 3}
   m_PrefabInstance: {fileID: 313913538200245923}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &1191846450 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 9101076100502794460, guid: 49cfb99a3f0c3db4292260e9b5b4a1da,
+    type: 3}
+  m_PrefabInstance: {fileID: 1073354334}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1200596864
 PrefabInstance:
@@ -2511,7 +2517,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1434069892
 Transform:
   m_ObjectHideFlags: 0
@@ -2691,8 +2697,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  playerInputKeyboard: {fileID: 0}
-  handInputCharacterController: {fileID: 0}
 --- !u!1 &1464860190 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8639231362450923181, guid: cb3438af94c8f364991404228bf237a5,
@@ -3222,7 +3226,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 4766512439592210637}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ba7c9c07776b58458dfa322447286cb, type: 3}
   m_Name: 
@@ -5747,7 +5751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toFaceCamera: {fileID: 7210916547138621319}
-  cameraToFace: {fileID: 0}
+  cameraToFace: {fileID: 1191846450}
   OnBeginFacingCamera:
     m_PersistentCalls:
       m_Calls:
@@ -7132,6 +7136,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2992323023130737858, guid: 23ad17d2b8f23694fab581cdb4bb9d17,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992323023130737858, guid: 23ad17d2b8f23694fab581cdb4bb9d17,
+        type: 3}
       propertyPath: ballSkeleton
       value: 
       objectReference: {fileID: 1566282620826716768}
@@ -7268,7 +7277,7 @@ PrefabInstance:
     - target: {fileID: 6436446291876398798, guid: 23ad17d2b8f23694fab581cdb4bb9d17,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6436446291876398798, guid: 23ad17d2b8f23694fab581cdb4bb9d17,
         type: 3}
