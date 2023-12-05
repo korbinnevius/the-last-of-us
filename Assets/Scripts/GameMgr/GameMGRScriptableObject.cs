@@ -12,5 +12,7 @@ public class GameMGRScriptableObject : ScriptableObject
     public int roundScore;
     public int spawnProbability;
     public bool sceneTrans;
+    public int spawnerSpinSpeed;
+    
 
 }
