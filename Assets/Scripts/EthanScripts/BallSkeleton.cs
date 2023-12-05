@@ -17,7 +17,7 @@ public class BallSkeleton : MonoBehaviour
     public float YAxisForce;
     public float ZAxisForce;
     
-    public float MaxSpeed = 50f;
+    public float MaxSpeed;
     public float MaxSpeedRateOT;
     public float BounceForce = 0f;
 

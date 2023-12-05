@@ -78,7 +78,6 @@ public class CenterSurrounder : MonoBehaviour
                 Vector3 dir = new Vector3(Mathf.Cos(x), 0, Mathf.Sin(x)).normalized;
                 //offseting 
                 Vector3 pos = transform.position + dir * radius;
-                //
                 Quaternion orientation = Quaternion.LookRotation(-dir, Vector3.up);
                 if (spawnPick == 0)
                 {
@@ -91,6 +90,19 @@ public class CenterSurrounder : MonoBehaviour
             }
             yield return brickSpawnerCoRoutineStarted = false;
            
+    }
+
+    public void RoundValuesIncrease()
+    {
+        //Increasing Spawner Stuff
+        //Increasing the spin with each round
+        GameMgrScriptableObject.spawnerSpinSpeed += (GameMgrScriptableObject.spawnerSpinSpeed/2);
+        //Increase Max Brick Count
+        GameMgrScriptableObject.maxBrickCount += 4;
+        
+        //Affecting Ball Values w/ each round
+        GameMgrScriptableObject.yAxisForce -= (GameMgrScriptableObject.yAxisForce/4);
+        GameMgrScriptableObject.bounceForce += (GameMgrScriptableObject.bounceForce / 2);
     }
   
 }

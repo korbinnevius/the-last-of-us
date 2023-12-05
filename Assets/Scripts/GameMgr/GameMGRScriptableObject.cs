@@ -12,7 +12,12 @@ public class GameMGRScriptableObject : ScriptableObject
     public int roundScore;
     public int spawnProbability;
     public bool sceneTrans;
+    //Spawner Properties
     public int spawnerSpinSpeed;
-    
+    public int maxBrickCount;
+    //Ball Properties
+    public float yAxisForce;
+    public int bounceForce;
+
 
 }

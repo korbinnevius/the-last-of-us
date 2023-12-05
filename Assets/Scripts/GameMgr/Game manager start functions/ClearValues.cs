@@ -27,5 +27,13 @@ public class ClearValues : MonoBehaviour
         gameMgrScriptableObject.roundScore = 0;
         gameMgrScriptableObject.startBricksInScene = 0;
         gameMgrScriptableObject.spawnProbability = startBrickSpawnProbability;
+        //resetting transition scene bool
+        gameMgrScriptableObject.sceneTrans = false;
+        //Adding new juice value changes
+        gameMgrScriptableObject.spawnerSpinSpeed = 100 ;
+        //Increase Max Brick Count
+        gameMgrScriptableObject.maxBrickCount = 6;
+        gameMgrScriptableObject.yAxisForce = -120;
+        gameMgrScriptableObject.bounceForce = 200;
     }
 }

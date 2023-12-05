@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/Sam/Final Studio IV/Starting Scene.unity
+    guid: e04c89d19564ba349b1f80447fd7be7c
+  - enabled: 1
+    path: Assets/Scenes/Sam/Final Studio IV/GameManagerSO and Spawner.unity
+    guid: 5d4b82a352779454d8a5f0a43eba50ac
+  - enabled: 1
+    path: Assets/Scenes/Sam/Final Studio IV/Ending Scene.unity
+    guid: cdf520f04e613124aab7d5911c12f276
   m_configObjects: {}

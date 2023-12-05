@@ -12,7 +12,8 @@ public class LevelManager : MonoBehaviour
     //
     private void Start()
     {
-        GameMgrScriptableObject.sceneTrans = false;
+        //I dont like this logic getting handled here
+       // GameMgrScriptableObject.sceneTrans = true;
     }
 
     private void FixedUpdate()
@@ -23,7 +24,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    private void ChangeScene()
+    public void ChangeScene()
     {
         SceneManager.LoadSceneAsync(sceneToMoveTo);
     }
