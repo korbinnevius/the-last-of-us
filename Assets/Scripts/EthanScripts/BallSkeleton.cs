@@ -14,8 +14,10 @@ public class BallSkeleton : MonoBehaviour
 
     //For testing and can be accessed by other scripts for gameplay
     public float XAxisForce;
-    public float YAxisForce;
+    private float YAxisForce;
     public float ZAxisForce;
+
+    public GameMGRScriptableObject GameMgrScriptableObject;
     
     public float MaxSpeed;
     public float MaxSpeedRateOT;
@@ -58,6 +60,7 @@ public class BallSkeleton : MonoBehaviour
 
     private void FixedUpdate()
     {
+        YAxisForce = GameMgrScriptableObject.yAxisForce;
         //the center, but at our y position.
         Vector3 centerAtY = new Vector3(center.position.x, _rigidbody.position.y, center.position.z);
         

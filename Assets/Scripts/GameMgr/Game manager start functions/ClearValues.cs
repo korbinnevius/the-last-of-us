@@ -33,7 +33,8 @@ public class ClearValues : MonoBehaviour
         gameMgrScriptableObject.spawnerSpinSpeed = 100 ;
         //Increase Max Brick Count
         gameMgrScriptableObject.maxBrickCount = 6;
-        gameMgrScriptableObject.yAxisForce = -120;
-        gameMgrScriptableObject.bounceForce = 200;
+        //was 120 and 200
+        gameMgrScriptableObject.yAxisForce = -70;
+        gameMgrScriptableObject.bounceForce = 60;
     }
 }

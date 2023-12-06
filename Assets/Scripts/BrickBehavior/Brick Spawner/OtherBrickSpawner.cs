@@ -64,7 +64,8 @@ public class CenterSurrounder : MonoBehaviour
     private IEnumerator SpawnBrickTimed()
     {
         brickSpawnerCoRoutineStarted = true;
-        yield return new WaitForSeconds(1.0f);
+        RoundValuesIncrease();
+        yield return new WaitForSeconds(4.0f);
             for (int i = 0; i < maxBrickCount; i++)
             {
                 //probability logic for brick spawning
@@ -101,7 +102,7 @@ public class CenterSurrounder : MonoBehaviour
         GameMgrScriptableObject.maxBrickCount += 4;
         
         //Affecting Ball Values w/ each round
-        GameMgrScriptableObject.yAxisForce -= (GameMgrScriptableObject.yAxisForce/4);
+        GameMgrScriptableObject.yAxisForce += (GameMgrScriptableObject.yAxisForce/8);
         GameMgrScriptableObject.bounceForce += (GameMgrScriptableObject.bounceForce / 2);
     }
   

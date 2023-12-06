@@ -20,12 +20,14 @@ public class LevelManager : MonoBehaviour
     {
         if (GameMgrScriptableObject.sceneTrans)
         {
-            ChangeScene();
+            StartCoroutine(ChangeScene()); 
         }
     }
 
-    public void ChangeScene()
+    private IEnumerator ChangeScene()
     {
+        yield return new WaitForSeconds(4.0f);
         SceneManager.LoadSceneAsync(sceneToMoveTo);
+        yield return null;
     }
 }
