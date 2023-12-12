@@ -647,6 +647,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grinding Sound
       objectReference: {fileID: 0}
+    - target: {fileID: 5771807257568707560, guid: 52aa0482ddd1ad9459a71c755da47c28,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.682
+      objectReference: {fileID: 0}
     - target: {fileID: 6281729769444607816, guid: 52aa0482ddd1ad9459a71c755da47c28,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1294,6 +1299,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1126418540}
     m_Modifications:
+    - target: {fileID: 1222575365341831785, guid: 22cf81a0179ea724da6e921d037edf4b,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.672
+      objectReference: {fileID: 0}
     - target: {fileID: 2516478725532456034, guid: 22cf81a0179ea724da6e921d037edf4b,
         type: 3}
       propertyPath: m_LocalPosition.x

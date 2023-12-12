@@ -34,7 +34,7 @@ public class ClearValues : MonoBehaviour
         //Increase Max Brick Count
         gameMgrScriptableObject.maxBrickCount = 2;
         //
-        gameMgrScriptableObject.yAxisForce = -35;
+        gameMgrScriptableObject.yAxisForce = -65;
         //WAS JUST 60 7:02
         gameMgrScriptableObject.bounceForce = 60;
     }

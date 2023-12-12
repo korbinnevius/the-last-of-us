@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalLives: 3
   bricksDestroyed: 0
-  startBricksInScene: 4
+  startBricksInScene: 1
   totalBounces: 0
   totalScore: 0
-  roundScore: 0
+  roundScore: 30
   spawnProbability: 6
   sceneTrans: 0
   spawnerSpinSpeed: 337
   maxBrickCount: 5
-  yAxisForce: -49.833984
-  bounceForce: 202
+  yAxisForce: -50
+  bounceForce: 72

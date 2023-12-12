@@ -65,6 +65,10 @@ public class CenterSurrounder : MonoBehaviour
     {
         brickSpawnerCoRoutineStarted = true;
         RoundValuesIncrease();
+        if (GameMgrScriptableObject.yAxisForce >= 100)
+        {
+            GameMgrScriptableObject.yAxisForce = 70;    
+        }
         yield return new WaitForSeconds(4.0f);
             for (int i = 0; i < maxBrickCount; i++)
             {
@@ -102,8 +106,8 @@ public class CenterSurrounder : MonoBehaviour
         GameMgrScriptableObject.maxBrickCount += 1;
         
         //Affecting Ball Values w/ each round
-        GameMgrScriptableObject.yAxisForce += -5;//(GameMgrScriptableObject.yAxisForce/8);
-        GameMgrScriptableObject.bounceForce += 4;//(GameMgrScriptableObject.bounceForce / 2);
+        GameMgrScriptableObject.yAxisForce += -4;//(GameMgrScriptableObject.yAxisForce/8);
+        GameMgrScriptableObject.bounceForce += 6;//(GameMgrScriptableObject.bounceForce / 2); //was 4
     }
   
 }
