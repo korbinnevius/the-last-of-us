@@ -31,10 +31,11 @@ public class LevelManager : MonoBehaviour
     {
         if (coroutineStarted == false)
         {
+            coroutineStarted = true;
             yield return new WaitForSeconds(1.5f);
             SceneManager.LoadSceneAsync(sceneToMoveTo);
             yield return new WaitForSeconds(4.0f);
-            coroutineStarted = true;
+            
         }
         
 

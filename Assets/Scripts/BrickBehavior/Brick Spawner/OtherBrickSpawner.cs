@@ -102,8 +102,8 @@ public class CenterSurrounder : MonoBehaviour
         GameMgrScriptableObject.maxBrickCount += 1;
         
         //Affecting Ball Values w/ each round
-        GameMgrScriptableObject.yAxisForce += (GameMgrScriptableObject.yAxisForce/8);
-        GameMgrScriptableObject.bounceForce += (GameMgrScriptableObject.bounceForce / 2);
+        GameMgrScriptableObject.yAxisForce += -5;//(GameMgrScriptableObject.yAxisForce/8);
+        GameMgrScriptableObject.bounceForce += 4;//(GameMgrScriptableObject.bounceForce / 2);
     }
   
 }
