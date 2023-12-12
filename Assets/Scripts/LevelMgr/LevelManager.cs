@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,25 +10,33 @@ public class LevelManager : MonoBehaviour
 {
     public GameMGRScriptableObject GameMgrScriptableObject;
     public String sceneToMoveTo;
+    
+
+    private bool coroutineStarted;
     //
     private void Start()
     {
-        //I dont like this logic getting handled here
-       // GameMgrScriptableObject.sceneTrans = true;
+        coroutineStarted = false;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        if (GameMgrScriptableObject.sceneTrans)
+        if (GameMgrScriptableObject.totalLives <= 0)
         {
-            StartCoroutine(ChangeScene()); 
+            StartCoroutine(ChangeScene());
         }
     }
 
     private IEnumerator ChangeScene()
     {
-        yield return new WaitForSeconds(4.0f);
-        SceneManager.LoadSceneAsync(sceneToMoveTo);
-        yield return null;
+        if (coroutineStarted == false)
+        {
+            yield return new WaitForSeconds(1.5f);
+            SceneManager.LoadSceneAsync(sceneToMoveTo);
+            yield return new WaitForSeconds(4.0f);
+            coroutineStarted = true;
+        }
+        
+
     }
 }

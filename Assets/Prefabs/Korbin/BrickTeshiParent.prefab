@@ -250,7 +250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameMgrScriptableObject: {fileID: 11400000, guid: 0d4ac9b8b32fa514bb98f9adaf49628b,
     type: 2}
-  vfxEmpty: {fileID: 5714049267023950935, guid: 71a0e667433e27546855516d84234015,
+  vfxEmpty: {fileID: 5714049267023950935, guid: ab216d541f295554b9a77a4a98949b82,
     type: 3}
 --- !u!65 &6886006861359708643
 BoxCollider:
@@ -259,7 +259,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6368906866775946652}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 106696cb07cc6c04abbd89d30c3409d8, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

@@ -99,7 +99,7 @@ public class CenterSurrounder : MonoBehaviour
         //Increasing the spin with each round
         GameMgrScriptableObject.spawnerSpinSpeed += (GameMgrScriptableObject.spawnerSpinSpeed/2);
         //Increase Max Brick Count
-        GameMgrScriptableObject.maxBrickCount += 4;
+        GameMgrScriptableObject.maxBrickCount += 1;
         
         //Affecting Ball Values w/ each round
         GameMgrScriptableObject.yAxisForce += (GameMgrScriptableObject.yAxisForce/8);

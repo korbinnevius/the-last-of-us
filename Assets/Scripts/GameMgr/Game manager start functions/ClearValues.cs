@@ -32,9 +32,10 @@ public class ClearValues : MonoBehaviour
         //Adding new juice value changes
         gameMgrScriptableObject.spawnerSpinSpeed = 100 ;
         //Increase Max Brick Count
-        gameMgrScriptableObject.maxBrickCount = 6;
-        //was 120 and 200
-        gameMgrScriptableObject.yAxisForce = -70;
+        gameMgrScriptableObject.maxBrickCount = 2;
+        //
+        gameMgrScriptableObject.yAxisForce = -35;
+        //WAS JUST 60 7:02
         gameMgrScriptableObject.bounceForce = 60;
     }
 }

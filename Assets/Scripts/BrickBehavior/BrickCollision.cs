@@ -14,6 +14,7 @@ public class BrickCollision : MonoBehaviour
         {
             //whenever the brick gets hit by the ball, add 5 to the score and then destroy the brick
             Instantiate(vfxEmpty);
+            vfxEmpty.transform.position = gameObject.transform.position;
             GameMgrScriptableObject.roundScore += 5;
             Destroy(gameObject); 
         }
